@@ -94,8 +94,8 @@ class Player
     puts "#{name}, is your turn, Choose 1..9"
     while true
       cell = gets.chomp.to_i
-      break cell if cell.between?(1,9) && board.board[cell] == " "
-      puts "ERRROOOOOOO, try again my friend"
+      break cell if cell.between?(1,9) && board.board[cell] == " " 
+      puts "ERRROOOOOOO, Your it is later try in another position my friend"
     end
     board.changeCell(cell,mark)
   end
@@ -109,7 +109,7 @@ def game
   name = gets.chomp
 
   player_1 = Player.new(name, "x")
-  puts "Your name PLayer 2:"
+  puts "Your name Player 2:"
   name = gets.chomp
   player_2 = Player.new(name, "o")
 
