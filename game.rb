@@ -7,7 +7,7 @@ class Board
       @board[cell] = " "
     end
 
-    @boardGrid = Array.new(3) { Array.new(3, " ")}
+    @boardGrid = Array.new(3) { Array.new(3, " ") }
     self.showInstruct
   end
 
@@ -21,7 +21,7 @@ class Board
     puts ""
   end
 
-  def changeCell(cell, value)
+  def changeCell(cell,value)
     @board[cell] = value
     @boardGrid[cellToRow(cell)][cellToColumn(cell)] = value
     puts ""
@@ -56,7 +56,7 @@ class Board
     end
     return true if validCombination
     return false
-    
+end
     #showboard
     def showBoard
         cell = 1
@@ -69,9 +69,16 @@ class Board
             puts  "\n============" unless row == 2
         end
     end
-    #here has a problem !!
+    private
+    def cellToColumn(cell)
+        return (cell-1)%3
+    end
+
+    def cellToRow(cell)
+        return row = (cell-1) /3
+    end
   end
-end
+
 
 #player
 class Player
@@ -79,8 +86,8 @@ class Player
   attr_accessor :mark
 
   def initialize(name, mark)
-    @name =name
-    @mark =mark
+    @name = name
+    @mark = mark
   end
 
   def makeMove(board)
@@ -102,6 +109,29 @@ def game
   name = gets.chomp
 
   player_1 = Player.new(name, "x")
-  puts
+  puts "Your name PLayer 2:"
+  name = gets.chomp
+  player_2 = Player.new(name, "o")
+
+  9.times do |turn|
+      if turn%2 == 0
+        player_1.makeMove(board)
+        if board.winningCombination(player_1.mark)
+            winner = "#{player_1.name}"
+            break
+        end
+      else
+        player_2.makeMove(board)
+        if board.winningCombination(player_2.mark)
+          winner = "#{player_2.name}"
+          break
+        end
+      end
+
+      winner = "None" if turn == 8
+  end
+  puts "Okey you winner: #{winner}"
 end
+
+game()
 
