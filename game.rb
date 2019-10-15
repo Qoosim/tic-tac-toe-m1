@@ -22,3 +22,35 @@ class Board
   end
 end
 
+#player
+class Player
+  attr_accessor :name
+  attr_accessor :mark
+
+  def initialize(name, mark)
+    @name =name
+    @mark =mark
+  end
+
+  def makeMove(board)
+    puts "#{name}, is your turn, Choose 1..9"
+    while true
+      cell = gets.chomp.to_i
+      break cell if cell.between?(1,9) && board.board[cell] == " "
+      puts "ERRROOOOOOO, try again my friend"
+    end
+    board.changeCell(cell,mark)
+  end
+end
+
+#game
+def game
+  winner = ""
+  board = Board.new
+  puts "Your Name: "
+  name = gets.chomp
+
+  player_1 = Player.new(name, "x")
+  puts
+end
+
