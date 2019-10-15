@@ -49,6 +49,16 @@ class Board
     end
   
     #diagnal
+    validCombination = true
+    column = 3
+    3.times do |x|
+        validCombination = false if @boardGrid[x][column-1] != value
+    end
+    return true if validCombination
+    return false
+
+    
+  end
 end
 
 #player
