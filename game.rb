@@ -20,6 +20,35 @@ class Board
           " 7 | 8 | 9 "
     puts ""
   end
+
+  def changeCell(cell, value)
+    @board[cell] = value
+    @boardGrid[cellToRow(cell)][cellToColumn(cell)] = value
+    puts ""
+    self.showBoard
+    puts ""
+  end
+
+  def winningCombination(value)
+    #rows
+    3.times do |row|
+        validCombination = true
+        3.times do |column|
+          validCombination = false if @boardGrid[row][column] != value
+        end
+        return true if validCombination
+    end
+
+    #column
+    3.times do |column|
+        validCombination = true
+        3.times do |row|
+            validCombination = false if @boardGrid[row][column] != value
+        end
+        return true if validCombination
+    end
+  
+    #diagnal
 end
 
 #player
