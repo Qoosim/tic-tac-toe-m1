@@ -56,8 +56,20 @@ class Board
     end
     return true if validCombination
     return false
-
     
+    #showboard
+    def showBoard
+        cell = 1
+        3.times do |row|
+            3.times do |column|
+                print "#{@board[cell]}"
+                print "|" unless column == 2
+                cell += 1
+            end
+            puts  "\n============" unless row == 2
+        end
+    end
+    #here has a problem !!
   end
 end
 
