@@ -1,5 +1,5 @@
 class Board
-  attr_accessor : board
+  attr_accessor :board
 
   def initialize
     @board = {}
@@ -13,10 +13,12 @@ class Board
 
   def showInstruct
     puts "\n Dont forget, You can use The number so select"
-    puts  "1 | 2 | 3",
-          "4 | 4 | 6",
-          "7 | 8 | 9"
+    puts  " 1 | 2 | 3 ",
+          "-----------",
+          " 4 | 5 | 6 ",
+          "-----------",
+          " 7 | 8 | 9 "
     puts ""
   end
+end
 
-  
