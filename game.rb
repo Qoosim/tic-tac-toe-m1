@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 class Board
   attr_accessor :board
 
