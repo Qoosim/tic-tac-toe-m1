@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+puts "Hello!"
 
 class Board
   attr_accessor :board
