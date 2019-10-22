@@ -1,6 +1,6 @@
 AllCops:
   Exclude:
-    - "bin/*"
+    # - "bin/*"
     - "db/**/*"
     - "config/**/*"
     - "Guardfile"
