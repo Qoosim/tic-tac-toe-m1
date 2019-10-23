@@ -117,6 +117,7 @@ loop do
     sleep 0.5
     puts "Game Over"
     sleep 0.5
+    
 
     puts "Another chance ? Yes / NO"
     break if gets.chomp == play_again
