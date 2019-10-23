@@ -19,3 +19,30 @@ def welcome
   puts "Good Luck! <_<"
 end
 welcome
+
+def display(cell)
+  puts '#########'
+  puts "#{cell[0][0]} | #{cell[0][1]} | #{cell[0][2]}"
+  puts '#########'
+  puts "#{cell[1][0]} | #{cell[1][1]} | #{cell[1][2]}"
+  puts '#########'
+  puts "#{cell[2][0]} | #{cell[2][1]} | #{cell[2][2]}"
+  puts '#########'
+end
+
+def name_valid?(name)
+  loop do
+    valid = name.empty?
+    return name unless valid
+  end
+end
+
+def valid_element?(element)
+  loop do
+    arr = %w[X O]
+    return element if arr.include? element
+
+    puts 'ERRORRRR! It should be X or O,  *_*'
+    element = gets.chomp.upcase!
+  end
+end
