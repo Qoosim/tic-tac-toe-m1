@@ -11,6 +11,16 @@ class Board
   end
 
   def move(element, place)
-    
+    if place <= 3
+      @cell[0][@cell[0].index(place)] = element
+    elsif place <= 6
+      @cell[1][@cell[1].index(place)] = element
+    else
+      @cell[2][@cell[2].index(place)] = element
+    end
+    result = Game.new(@cell)
+    result.win_game
+    @couter += 1
+    [result.win_game, @counter, @cell]
   end
 end
