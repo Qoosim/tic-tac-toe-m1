@@ -46,3 +46,70 @@ def valid_element?(element)
     element = gets.chomp.upcase!
   end
 end
+
+def info_players
+  puts "\nOk! Player 1 your name: "
+  name = gets.chomp
+  player1 = Player.new(name_valid?(name))
+  puts "Choose: 'X' or 'O'"
+  element = gets.chomp.upcase!
+  player1.element = valid_element?(element)
+  puts "Ok! Now is turn for Player 2"
+  puts "Player 2 your name: "
+  name = gets.chomp
+  player2 = Player.new(name_valid?(name))
+  player2.element = player1.element == 'X' ? 'O' : 'X'
+  [player1, player2]
+end
+
+players = info_players
+player1 = players[0]
+player2 = players[1]
+
+loop do
+  board = Board.new
+  cell = board.cell
+  display(cell)
+
+  loop do
+    begin
+      puts "Ok, #{player1.name}, it's your turn, select a number between 1-9"
+        place = gets.chomp
+        result = board.move(player1.element, place.to_i)
+        display(result[2])
+      rescue StandardError
+        puts "Oh no! You have to select a number between 1-9 \nRemember to fill a blank space."
+        retry
+        end
+      if result[0] == true
+        puts "#{player1.name}, you won!!!"
+        player1.score += 1
+        puts "#{player1.name}, your score: #{player1.score}"
+        puts "#{player2.name}, your score: #{player2.score}"
+        break
+      end
+      if result[1] == 9
+        puts "That's a draw!"
+        puts "#{player1.name}, your score: #{player1.score}"
+        puts "#{player2.name}, your score: #{player2.score}"
+        break
+      end
+  
+      begin
+        puts "Ok,#{player2.name}, it's your turn, select a number between 1-9"
+        place = gets.chomp
+        result = board.move(player2.element, place.to_i)
+        display(result[2])
+      rescue StandardError
+        puts "Oh no! You have to select a number between 1-9 \nRemember to fill a blank space."
+        retry
+      end
+
+      next unless result[0] == true
+      puts "#{player2.name}, Yeah Man you Won !"
+      player2.score += 1
+      puts "#{player1.name}, your score: #{player1.score}"
+      puts "#{player2.name}, your score: #{player2.score}"
+      break
+    end
+
