@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
 
 # frozen_string_literal: true
-
 def welcome
   puts "Welcome Players!"
   puts "Tic Tac Toe is a game for 2 players."
@@ -16,13 +15,13 @@ end
 welcome
   
 def display(cell)
-  puts '/////////'
+  puts '##########'
   puts "#{cell[0][0]} | #{cell[0][1]} | #{cell[0][2]}"
-  puts '/////////'
+  puts '##########'
   puts "#{cell[1][0]} | #{cell[1][1]} | #{cell[1][2]}"
-  puts '/////////'
+  puts '##########'
   puts "#{cell[2][0]} | #{cell[2][1]} | #{cell[2][2]}"
-  puts '/////////'
+  puts '##########'
 end
 
 def name_valid?(name)
@@ -41,3 +40,5 @@ def valid_element?(element)
     element = gets.chomp.upcase!
   end
 end
+
+# info_player will ask name of playrs
