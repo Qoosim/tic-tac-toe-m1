@@ -41,4 +41,8 @@ def valid_element?(element)
   end
 end
 
+puts "Your Name player: "
+player = gets.chomp
 # info_player will ask name of playrs
+
+
