@@ -122,4 +122,3 @@ loop do
     puts "Another chance ? Yes / NO"
     break if gets.chomp == play_again
   end
-
