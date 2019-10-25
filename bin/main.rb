@@ -41,4 +41,11 @@ def valid_element?(element)
   end
 end
 
+puts "Name player: "
+player1 = gets.chomp
+
+puts "#{player1} welcome"
+
+
+
 
