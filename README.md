@@ -16,14 +16,16 @@
 
 
 ## Instructions for PLayer Game:
-  Step 1: Tic Tac Toe is a game for 2 players.
-  Step 2: The game is played on a cell that's 3 x 3
-  Step 3: If you are X, your friend? is O
-  Step 4: Players take turns putting their marks in empty squares
-  Step 5: The first player to get 3 marks in a row WIN
-  Step 6: When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a tie
-  Step 7: Make sure to move in diagonal, horizontal and vertical, otherwise it's going to be an invalid movement
-  
+<ul>
+
+  <li>Step 1: Tic Tac Toe is a game for 2 players.</li>
+  <li>Step 2: The game is played on a cell that's 3 x 3</li>
+  <li>Step 3: If you are X, your friend? is O</li>
+  <li>Step 4: Players take turns putting their marks in empty squares</li>
+  <li>Step 5: The first player to get 3 marks in a row WIN</li>
+  <li>Step 6: When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a tie</li>
+  <li>Step 7: Make sure to move in diagonal, horizontal and vertical, otherwise it's going to be an invalid movement</li>
+</ul> 
 
 <!-- ABOUT THE PROJECT -->
 ## Milestone 1: Project setup
