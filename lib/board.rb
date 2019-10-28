@@ -20,7 +20,7 @@ class Board
     end
     result = Game.new(@cell)
     result.win_game
-    @couter += 1
+    @counter += 1
     [result.win_game, @counter, @cell]
   end
 end
