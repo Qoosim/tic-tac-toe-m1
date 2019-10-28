@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 # frozen_string_literal: true
 
 require_relative 'players.rb'
@@ -20,7 +22,7 @@ class Board
     end
     result = Game.new(@cell)
     result.win_game
-    @couter += 1
+    @counter += 1
     [result.win_game, @counter, @cell]
   end
 end
