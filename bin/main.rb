@@ -17,8 +17,10 @@ require_relative '../lib/board.rb'
     puts "When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a tie"
     puts "Make sure to move in diagonal, horizontal and vertical, otherwise it's going to be an invalid movement"
     puts "Good Luck! <_<"
+    
   end
   welcome
+  
     
   def display(cell)
     puts '##########'
