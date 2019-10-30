@@ -16,8 +16,6 @@ require_relative '../lib/board.rb'
     puts "The first player to get 3 marks in a row WIN"
     puts "When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a tie"
     puts "Make sure to move in diagonal, horizontal and vertical, otherwise it's going to be an invalid movement"
-    puts "Good Luck! <_<"
-    
   end
   welcome
   
@@ -91,7 +89,7 @@ loop do
       break
     end
     if result[1] == 9
-      puts "That's a draw!"
+      puts "That`'`s a draw!"
       puts "#{player1.name}, your score: #{player1.score}"
       puts "#{player2.name}, your score: #{player2.score}"
       break
