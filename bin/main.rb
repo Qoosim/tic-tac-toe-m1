@@ -18,6 +18,7 @@ require_relative '../lib/board.rb'
     puts "Make sure to move in diagonal, horizontal and vertical, otherwise it's going to be an invalid movement"
   end
   welcome
+  
     
   def display(cell)
     puts '##########'
